@@ -1,0 +1,195 @@
+:root {
+  --bg: #f7f7f8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #d1d5db;
+  --white: #ffffff;
+  --primary: #2563eb;
+  --success-bg: #ecfdf3;
+  --success-border: #86efac;
+  --error-bg: #fef2f2;
+  --error-border: #fca5a5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 1.4rem 2rem;
+}
+
+header > div {
+  max-width: 100rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+header li a {
+  font-size: 1.4rem;
+  color: var(--muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.6rem;
+}
+
+header li a.active {
+  color: var(--primary);
+  font-weight: 600;
+  background: #eff6ff;
+}
+
+#root > div:not(:last-child):not(:first-child) {
+  width: min(95rem, calc(100% - 3.2rem));
+  margin: 2rem auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+#root > div:last-child {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.6rem 0;
+  font-size: 1.3rem;
+}
+
+button {
+  border: none;
+  border-radius: 0.8rem;
+  background: var(--primary);
+  color: #fff;
+  height: 4rem;
+  padding: 0 1.4rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.fetchrq-page {
+  font-size: 1.5rem;
+}
+
+.fetchrq-heading {
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.fetchrq-section {
+  margin-bottom: 2rem;
+}
+
+.fetchrq-subheading {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.mutation-form {
+  display: grid;
+  grid-template-columns: 1fr 12rem auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mutation-form input {
+  height: 4rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+}
+
+.mutation-status {
+  font-size: 1.4rem;
+  border: 1px solid;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.mutation-status.success {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+  color: #166534;
+}
+
+.mutation-status.error {
+  background: var(--error-bg);
+  border-color: var(--error-border);
+  color: #991b1b;
+}
+
+.fetchrq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  background: #fafafa;
+}
+
+.post-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.post-card p {
+  font-size: 1.4rem;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.price-tag {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .mutation-form {
+    grid-template-columns: 1fr;
+  }
+
+  .fetchrq-grid {
+    grid-template-columns: 1fr;
+  }
+}
